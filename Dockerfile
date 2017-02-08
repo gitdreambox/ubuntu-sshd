@@ -35,3 +35,4 @@ EXPOSE 22
 
 COPY start.sh /start.sh
 CMD ["./start.sh", "-bash"]
+#docker build -t="dreambox/ubuntu-sshd:v1" github.com/gitdreambox/ubuntu-sshd
