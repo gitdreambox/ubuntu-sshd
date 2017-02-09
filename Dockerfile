@@ -1,4 +1,4 @@
-FROM       ubuntu:16.04
+FROM	ubuntu:16.04
 MAINTAINER dreambox "https://github.com/gitdreambox"
 #https://github.com/arukasio/docker-hub-images/tree/master/quickstart-ubuntu
 #https://github.com/soulfeng/sshd_ubuntu
@@ -15,11 +15,6 @@ RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted 
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >> /etc/apt/sources.list
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse" >> /etc/apt/sources.list
 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >> /etc/apt/sources.list
-#RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse" > /etc/apt/sources.list
-#RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >> /etc/apt/sources.list
-#RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >> /etc/apt/sources.list
-#RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse" >> /etc/apt/sources.list
-#RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >> /etc/apt/sources.list
 # Install openssh-server
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -35,5 +30,4 @@ EXPOSE 22
 
 COPY start.sh /start.sh
 CMD ["./start.sh", "-bash"]
-#sudo docker build -t dreambox/ubuntu-sshd github.com/gitdreambox/ubuntu-sshd
 
